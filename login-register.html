@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کلاسیکال موزیک | صفحه ورود</title>
+    <link rel="icon" type="image/x-icon" href="assets/svg/logo1.PNG">    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="assets/css/styles-login-register.css">
+</head>
+<body class="light">
+    
+    <header class="header">
+        <button class="menu-toggle" id="menuToggle">☰</button> 
+        <div class="container mx-auto px-4 flex justify-between items-center py-3">
+            <!-- Right Side - Logo and Menu Toggle -->
+            <div class="flex items-center space-x-4 space-x-reverse">
+                <!-- <button class="menu-toggle text-2xl md:hidden" id="menuToggle">
+                    
+                </button> -->
+                <a href="index.html" class="flex items-center">
+                    <img src="assets/svg/logo1.PNG" alt="کلاسیکال موزیک" class="h-10 w-10 ml-3">
+                    <h1 class="text-xl md:text-2xl font-bold">کلاسیکال موزیک</h1>
+                </a>
+            </div>
+
+            <!-- Center - Search Bar (Desktop) -->
+            <div class="hidden md:flex flex-1 max-w-xl mx-6">
+                <div class="relative w-full">
+                    <input type="text" placeholder="جستجو کنید..." 
+                        class="w-full py-2 px-4 pr-10 rounded-full border focus:outline-none focus:ring-2 bg-opacity-50"
+                        style="background-color: inherit; border-color: currentColor;">
+                    <button class="absolute left-3 top-1/2 transform -translate-y-1/2">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Left Side - Theme and Auth -->
+            <div class="flex items-center space-x-4 space-x-reverse">
+                <!-- Theme Switcher -->
+                <div class="theme-switcher flex items-center space-x-2 space-x-reverse">
+                    <button onclick="setTheme('light')" class="theme-btn theme-light w-6 h-6 rounded-full border-2" title="حالت روشن"></button>
+                    <button onclick="setTheme('dark')" class="theme-btn theme-dark w-6 h-6 rounded-full border-2" title="حالت تیره"></button>
+                    <button onclick="setTheme('orange')" class="theme-btn theme-orange w-6 h-6 rounded-full border-2" title="حالت نارنجی"></button>
+                </div>
+
+                <!-- Auth Button -->
+                <div class="auth2-buttons hidden md:block">
+                    <a href="#" class="btn sign-in-btn px-4 py-1 rounded-full border hover:bg-opacity-20 transition"
+                    style="border-color: currentColor;">
+                        ورود | ثبت نام
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Bar - Mobile -->
+        <div class="md:hidden px-4 py-2">
+            <div class="relative">
+                <input type="text" placeholder="جستجو کنید..." 
+                    class="w-full py-2 px-4 pr-10 rounded-full border focus:outline-none bg-opacity-50"
+                    style="background-color: inherit; border-color: currentColor;">
+                <button class="absolute left-3 top-1/2 transform -translate-y-1/2">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Side Menu -->
+    <div class="side-menu" id="sideMenu">
+        <div class="menu-categories">
+            <div class="auth-buttons flex flex-col items-start mt-4">
+                <a href="#" class="btn sign-in-btn w-full mb-2 text-center">ورود | ثبت نام</a>
+            </div>
+            <div class="menu-category">
+                <h3>دوره‌های موسیقی</h3>
+                <ul>
+                    <li><a href="#">باروک (1600-1750)</a></li>
+                    <li><a href="#">کلاسیک (1750-1820)</a></li>
+                    <li><a href="#">رمانتیک (1820-1900)</a></li>
+                    <li><a href="#">مدرن (1900-اکنون)</a></li>
+                </ul>
+            </div>
+            
+            <div class="menu-category">
+                <h3>دسته بندی های ویژه</h3>
+                <ul>
+                    <li><a href="#">آهنگسازان</a></li>
+                    <li><a href="#">آهنگسازان دوره ی جدید</a></li>
+                    <li><a href="#">آثار منتخب</a></li>
+                    <li><a href="#">مستند ها</a></li>
+                    <li><a href="#">اجرای زنده(ویدیو)</a></li>
+                    <li><a href="#">مقالات</a></li>
+                </ul>
+            </div>
+            
+            <div class="menu-category">
+                <h3>فروشگاه</h3>
+                <ul>
+                    <li><a href="subscribe.html">اشتراک ویژه</a></li>
+                    <li><a href="#">کتاب</a></li>
+                    <li><a href="#">آلبوم فیزیکی</a></li>
+                </ul>
+            </div>
+            
+            <!-- <div class="menu-category">
+                <h3>منابع آموزشی</h3>
+                <ul>
+                    <li><a href="#">تئوری موسیقی</a></li>
+                    <li><a href="#">تاریخ موسیقی</a></li>
+                    <li><a href="#">آموزش ساز</a></li>
+                    <li><a href="#">تحلیل آثار</a></li>
+                </ul>
+            </div> -->
+        </div>
+    </div>
+    
+    <!-- Overlay when menu is open -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- home page btn-->
+    <a href="index.html" class="btn btn-primary go-home-btn">رفتن به صفحه اصلی</a>
+
+    <!-- login form -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-form shadow p-3 rounded">
+                    <form method="form" action="" class="shadow p-4 rounded">
+                        <h2>ساخت حساب کاربری</h2>
+                        <div class="mb-3">
+                            <label for="Username" class="form-label">نام کاربری</label>
+                            <input type="text" class="form-control bg-gray" id="username" name="username" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">آدرس ایمیل</label>
+                            <input type="email" class="form-control bg-gray" id="email" name="email" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">رمز عبور</label>
+                            <input type="password" class="form-control bg-gray" id="password" name="password" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">تکرار رمز عبور</label>
+                            <input type="password" class="form-control bg-gray" id="confirmPassword" name="confirmPassword" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-dark w-100">تایید</button>
+                    </form>
+
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                
+                <div class="form-form ">
+                    <h2>ورود به حساب کاربری</h2>
+
+                    <form method="form" action="" class="shadow p-4 rounded">
+                        <div class="mb-3">
+                            <label for="Username" class="form-label">نام کاربری</label>
+                            <input type="text" class="form-control bg-gray" id="username" name="username" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">رمز عبور</label>
+                            <input type="password" class="form-control bg-gray" id="password" name="password" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-dark w-100">تایید</button>
+                        <p class="mt-3 text-center"> ایا رمز عبور خود را فراموش کرده اید؟ <a href="" class="text-primary"> فراموشی رمز عبور </a></p>
+                    </form>
+
+            </div> 
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="mailto:#"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="footer-info">
+                <p>© 2025 کلاسیکال موزیک - تمامی حقوق محفوظ است.</p>
+                <p>تمامی محتوای این سایت مربوط به موسیقی کلاسیک می‌باشد.</p>
+            </div>
+        </div>
+        <hr style="margin: 20px; margin-top: 20px; color: blanchedalmond;">
+        
+        <div class="developer-info">
+            <p>طراحی و توسعه : <span>سامان قاسمی</span></p>
+            <p>تماس : <a href="mailto:samanghasemiwork@gmail.com">samanghasemiwork@gmail.com</a></p>
+        </div>
+    </footer>
+
+
+    <script src="assets/js/script-login-register.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</body>

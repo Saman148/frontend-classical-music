@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کلاسیکال موزیک | صفحه اصلی</title>
+    <link rel="icon" type="image/x-icon" href="assets/svg/logo1.PNG">    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles-play-page.css">
+</head>
+<body class="light">
+
+    <!-- Header -->
+
+    <header class="header">
+        <button class="menu-toggle" id="menuToggle">☰</button> 
+        <div class="container mx-auto px-4 flex justify-between items-center py-3">
+            <!-- Right Side - Logo and Menu Toggle -->
+            <div class="flex items-center space-x-4 space-x-reverse">
+                <!-- <button class="menu-toggle text-2xl md:hidden" id="menuToggle">
+                    
+                </button> -->
+                <a href="#" class="flex items-center">
+                    <img src="assets/svg/logo1.PNG" alt="کلاسیکال موزیک" class="h-10 w-10 ml-3">
+                    <h1 class="text-xl md:text-2xl font-bold">کلاسیکال موزیک</h1>
+                </a>
+            </div>
+
+            <!-- Center - Search Bar (Desktop) -->
+            <div class="hidden md:flex flex-1 max-w-xl mx-6">
+                <div class="relative w-full">
+                    <input type="text" placeholder="جستجو کنید..." 
+                        class="w-full py-2 px-4 pr-10 rounded-full border focus:outline-none focus:ring-2 bg-opacity-50"
+                        style="background-color: inherit; border-color: currentColor;">
+                    <button class="absolute left-3 top-1/2 transform -translate-y-1/2">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Left Side - Theme and Auth -->
+            <div class="flex items-center space-x-4 space-x-reverse">
+                <!-- Theme Switcher -->
+                <div class="theme-switcher flex items-center space-x-2 space-x-reverse">
+                    <button onclick="setTheme('light')" class="theme-btn theme-light w-6 h-6 rounded-full border-2" title="حالت روشن"></button>
+                    <button onclick="setTheme('dark')" class="theme-btn theme-dark w-6 h-6 rounded-full border-2" title="حالت تیره"></button>
+                    <button onclick="setTheme('orange')" class="theme-btn theme-orange w-6 h-6 rounded-full border-2" title="حالت نارنجی"></button>
+                </div>
+
+                <!-- Auth Button -->
+                <div class="auth2-buttons hidden md:block">
+                    <a href="login-register.html" class="btn sign-in-btn px-4 py-1 rounded-full border hover:bg-opacity-20 transition"
+                    style="border-color: currentColor;">
+                        ورود | ثبت نام
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Bar - Mobile -->
+        <div class="md:hidden px-4 py-2">
+            <div class="relative">
+                <input type="text" placeholder="جستجو کنید..." 
+                    class="w-full py-2 px-4 pr-10 rounded-full border focus:outline-none bg-opacity-50"
+                    style="background-color: inherit; border-color: currentColor;">
+                <button class="absolute left-3 top-1/2 transform -translate-y-1/2">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Side Menu -->
+    <div class="side-menu" id="sideMenu">
+        <div class="menu-categories">
+            <div class="auth-buttons flex flex-col items-start mt-4">
+                <a href="#" class="btn sign-in-btn w-full mb-2 text-center">ورود | ثبت نام</a>
+            </div>
+            <div class="menu-category">
+                <h3>دوره‌های موسیقی</h3>
+                <ul>
+                    <li><a href="elements-list.html">باروک (1600-1750)</a></li>
+                    <li><a href="elements-list.html">کلاسیک (1750-1820)</a></li>
+                    <li><a href="elements-list.html">رمانتیک (1820-1900)</a></li>
+                    <li><a href="elements-list.html">مدرن (1900-اکنون)</a></li>
+                </ul>
+            </div>
+            
+            <div class="menu-category">
+                <h3>دسته بندی های ویژه</h3>
+                <ul>
+                    <li><a href="elements-list.html">آهنگسازان</a></li>
+                    <li><a href="elements-list.html">آهنگسازان دوره ی جدید</a></li>
+                    <li><a href="elements-list.html">آثار منتخب</a></li>
+                    <li><a href="elements-list.html">مستند ها</a></li>
+                    <li><a href="elements-list.html">اجرای زنده(ویدیو)</a></li>
+                    <li><a href="elements-list.html">مقالات</a></li>
+                </ul>
+            </div>
+            
+            <div class="menu-category">
+                <h3>فروشگاه</h3>
+                <ul>
+                    <li><a href="subscribe.html">اشتراک ویژه</a></li>
+                    <li><a href="#">کتاب</a></li>
+                    <li><a href="#">آلبوم فیزیکی</a></li>
+                </ul>
+            </div>
+            
+            <!-- <div class="menu-category">
+                <h3>منابع آموزشی</h3>
+                <ul>
+                    <li><a href="#">تئوری موسیقی</a></li>
+                    <li><a href="#">تاریخ موسیقی</a></li>
+                    <li><a href="#">آموزش ساز</a></li>
+                    <li><a href="#">تحلیل آثار</a></li>
+                </ul>
+            </div> -->
+        </div>
+    </div>
+    
+    <!-- Overlay when menu is open -->
+    <div class="overlay" id="overlay"></div>
+
+    
+
+    <!-- main -->
+    <main class="bg-gradient-to-b from-interal  text-black min-h-screen pb-24 text-main">
+    <!-- Album Header Section -->
+    <section class="container mx-auto px-4 py-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Album Cover and Info -->
+        <div class="flex flex-col lg:flex-row gap-6 lg:w-2/3">
+            <div class="relative group">
+            <img
+                alt="کاور آلبوم با تصویر نوازنده فلوت در ساحل با ماه صورتی در پس‌زمینه"
+                class="w-full lg:w-64 h-64 object-cover rounded-xl shadow-2xl transform group-hover:scale-105 transition duration-300"
+                src="assets/images/logo1.PNG"
+            />
+            <div class="absolute inset-0 bg-black bg-opacity-30 rounded-xl opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                <button class="bg-[#6d28d9] text-white p-4 rounded-full transform hover:scale-100 transition duration-200 main-play">
+                <i class="fas fa-play text-xl"></i>
+                </button>
+            </div>
+            </div>
+            
+            <div class="flex-1 text-main">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">بیداری شیرین</h1>
+            <p class="text-[#a78bfa] text-xl mb-4 text-main">تری اولدفیلد</p>
+            
+            <div class="flex flex-wrap gap-2 mb-4 text-main">
+                <span class="bg-[inherit] px-3 py-1 rounded-full text-sm">موسیقی نیو ایج</span>
+                <span class="bg-[inherit] px-3 py-1 rounded-full text-sm">آرامش بخش</span>
+                <span class="bg-[inherit] px-3 py-1 rounded-full text-sm">فلوت</span>
+            </div>
+            
+            <p class="text-[#94a3b8] mb-6 text-main">11 قطعه • 58 دقیقه • انتشار در 15 فروردین 1404</p>
+            
+            <div class="flex items-center space-x-4">
+                <button class="bg-[inherit] hover:bg-[#7c3aed] text-white px-6 py-2 rounded-full font-medium flex items-center transition btn-play">
+                <i class="fas fa-play"></i> <pre></pre> پخش آلبوم
+                </button>
+                <button class="bg-[#1e293b] hover:bg-[#334155] text-white p-3 rounded-full transition btn-play">
+                <i class="fas fa-download"></i>
+                </button>
+                <button class="bg-[#1e293b] hover:bg-[#334155] text-white p-3 rounded-full transition btn-play ">
+                <i class="far fa-heart"></i>
+                </button>
+                <span class="text-[#94a3b8] text-sm text-main">30 مورد علاقه</span>
+            </div>
+            </div>
+        </div>
+        
+        <!-- Similar Albums -->
+        <div class="lg:w-1/3">
+            <h2 class="text-xl font-bold mb-4 pb-2 border-b border-[#334155]">آهنگ های مشابه</h2>
+            <div class="space-y-4">
+            <!-- Similar Album 1 -->
+            <div class="flex items-center gap-4 p-3 rounded-lg transition cursor-pointer ani-box">
+                <img
+                alt="کاور آلبوم مستریو (نسخه 1404)"
+                class="w-16 h-16 rounded-lg object-cover"
+                src="assets/images/logo1.PNG"
+                />
+                <div>
+                <p class="font-medium">مستریو (نسخه 1404)</p>
+                <p class="text-sm text-[#94a3b8]">استرانز و فرح</p>
+                <div class="flex items-center text-xs text-[#64748b] mt-1 text-main">
+                    <span>فلامنکو</span>
+                    <span class="mx-2">•</span>
+                    <span>16 فروردین 1404</span>
+                </div>
+                </div>
+            </div>
+            
+            <!-- Similar Album 2 -->
+            <div class="flex items-center gap-4 p-3 hover:bg-[#1e293b] rounded-lg transition cursor-pointer  ani-box">
+                <img
+                alt="کاور آلبوم شمارش معکوس تا نیمه‌شب"
+                class="w-16 h-16 rounded-lg object-cover"
+                src="assets/images/logo1.PNG"
+                />
+                <div>
+                <p class="font-medium">شمارش معکوس تا نیمه‌شب</p>
+                <p class="text-sm text-[#94a3b8]">جولیان آپونته</p>
+                <div class="flex items-center text-xs text-[#64748b] mt-1 text-main">
+                    <span>لو-فای</span>
+                    <span class="mx-2">•</span>
+                    <span>18 فروردین 1404</span>
+                </div>
+                </div>
+            </div>
+            
+            <!-- Similar Album 3 -->
+            <div class="flex items-center gap-4 p-3 hover:bg-[#1e293b] rounded-lg transition cursor-pointer  ani-box">
+                <img
+                alt="کاور آلبوم حال و هوای آرام بهاری"
+                class="w-16 h-16 rounded-lg object-cover"
+                src="assets/images/logo1.PNG"
+                />
+                <div>
+                <p class="font-medium">حال و هوای آرام بهاری</p>
+                <p class="text-sm text-[#94a3b8]">موسیقی لو-فای فروتز</p>
+                <div class="flex items-center text-xs text-[#64748b] mt-1 text-main">
+                    <span>لو-فای</span>
+                    <span class="mx-2">•</span>
+                    <span>15 فروردین 1404</span>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Track Listing -->
+    <section class="container mx-auto px-4 py-6">
+        <div class="overflow-x-auto">
+        <table class="w-full">
+            <thead>
+            <tr class="border-b border-[#334155] text-[#94a3b8] text-right text-main">
+                <th class="pb-3 w-12">#</th>
+                <th class="pb-3">عنوان</th>
+                <th class="pb-3">هنرمند</th>
+                <th class="pb-3 text-left pr-10">مدت زمان</th>
+                <th class="pb-3 w-10"></th>
+                <th class="pb-3 w-10"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Track 1 -->
+            <tr class="border-b border-[#1e293b] hover:bg-[#1e293b]/50 transition group">
+                <td class="py-4 text-[#94a3b8] group-hover:text-white">1</td>
+                <td class="py-4">
+                <div class="flex items-center">
+                    <span>برگ‌های در حال افتادن</span>
+                    <button class="mr-4 text-[#94a3b8] hover:text-white hidden group-hover:block">
+                    <i class="fas fa-play"></i>
+                    </button>
+                </div>
+                </td>
+                <td class="py-4 text-[#e8d8b5] text-td">تری اولدفیلد</td>
+                <td class="py-4 text-[#94a3b8] text-left pr-10 text-td">05:25</td>
+                <td class="py-4 text-[#94a3b8] hover:text-white text-center">
+                <button class="text-td">
+                    <i class="fas fa-download"></i>
+                </button>
+                </td>
+                <td class="py-4 text-[#94a3b8] hover:text-white text-center">
+                <button class="text-td">
+                    <i class="fas fa-plus"></i>
+                </button>
+                </td>
+            </tr>
+            
+            <!-- Track 2 -->
+            <tr class="border-b border-[#1e293b] hover:bg-[#1e293b]/50 transition group">
+                <td class="py-4 text-[#94a3b8] group-hover:text-white">2</td>
+                <td class="py-4">
+                <div class="flex items-center">
+                    <span>برگ‌های در حال افتادن</span>
+                    <button class="mr-4 text-[#94a3b8] hover:text-white hidden group-hover:block">
+                    <i class="fas fa-play"></i>
+                    </button>
+                </div>
+                </td>
+                <td class="py-4 text-[#e8d8b5] text-td">تری اولدفیلد</td>
+                <td class="py-4 text-[#94a3b8] text-left pr-10 text-td">05:25</td>
+                <td class="py-4 text-[#94a3b8] hover:text-white text-center">
+                <button class="text-td">
+                    <i class="fas fa-download"></i>
+                </button>
+                </td>
+                <td class="py-4 text-[#94a3b8] hover:text-white text-center">
+                <button class="text-td">
+                    <i class="fas fa-plus"></i>
+                </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+    </section>
+
+    <!-- Player Controls -->
+    <div class="fixed bottom-0 left-0 right-0 bg-[#ffff] border-t border-[#334155] p-4 player-di">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+        <!-- Current Track Info -->
+        <div class="flex items-center mb-4 md:mb-0 w-full md:w-1/4">
+            <img 
+            src="assets/images/logo1.PNG" 
+            alt="در حال پخش" 
+            class="w-12 h-12 rounded ml-3"
+            >
+            <div>
+            <p class="font-medium text-sm">بالا و پایین</p>
+            <p class="text-[#94a3b8] text-xs">تری اولدفیلد</p>
+            </div>
+            <button class="mr-4 text-[inherit] hover:text-white">
+            <i class="far fa-heart"></i>
+            </button>
+        </div>
+        
+        <!-- Main Controls -->
+        <div class="flex flex-col items-center w-full md:w-2/4 mb-4 md:mb-0">
+            <div class="flex items-center mb-2">
+            <button class="mx-2 text-[#94a3b8] hover:text-white text-lg">
+                <i class="fas fa-random"></i>
+            </button>
+            <button class="mx-2 text-[#94a3b8] hover:text-white text-xl">
+                <i class="fas fa-step-backward"></i>
+            </button>
+            <button class="mx-3 text-white w-10 h-10 rounded-full flex items-center justify-center play-di">
+                <i class="fas fa-play"></i>
+            </button>
+            <button class="mx-2 text-[#94a3b8] hover:text-white text-xl">
+                <i class="fas fa-step-forward"></i>
+            </button>
+            <button class="mx-2 text-[#94a3b8] hover:text-white text-lg">
+                <i class="fas fa-redo"></i>
+            </button>
+            </div>
+            <div class="w-full flex items-center">
+            <span class="text-xs text-[#94a3b8] ml-2 text-td text-td">0:45</span>
+            <div class="flex-1 rounded-full h-1 woul-dii">
+                <div class=" h-1 rounded-full woul-di" style="width: 30%"></div>
+            </div>
+            <span class="text-xs text-[#94a3b8] mr-2 text-td">5:05</span>
+            </div>
+        </div>
+        
+        <!-- Volume and Other Controls -->
+        <div class="flex items-center justify-start w-full md:w-1/4 text-td">
+            <div class="flex items-center text-td">
+            <i class="fas fa-volume-up text-[#94a3b8] ml-2 text-td"></i>
+            <div class="w-24 bg-[#334155] rounded-full h-1  woul-dii">
+                <div class="bg-[#a78bfa] h-1 rounded-full  woul-di" style="width: 70%"></div>
+            </div>
+            </div>
+            <button class="text-[#94a3b8] hover:text-white ml-4 text-td">
+            <i class="fas fa-laptop"></i>
+            </button>
+            <button class="text-[#94a3b8] hover:text-white ml-4 text-td" >
+            <i class="fas fa-list"></i>
+            </button>
+        </div>
+        </div>
+    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="mailto:#"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="footer-info">
+                <p>© 2025 کلاسیکال موزیک - تمامی حقوق محفوظ است.</p>
+                <p>تمامی محتوای این سایت مربوط به موسیقی کلاسیک می‌باشد.</p>
+            </div>
+        </div>
+        <hr style="margin: 20px; margin-top: 20px; color: blanchedalmond;">
+        
+        <div class="developer-info">
+            <p>طراحی و توسعه : <span>سامان قاسمی</span></p>
+            <p>تماس : <a href="mailto:samanghasemiwork@gmail.com">samanghasemiwork@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script-play-page.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

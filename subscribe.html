@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کلاسیکال موزیک | اشتراک ویژه</title>
+    <link rel="stylesheet" href="assets/css/styles-subscribe.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="light">
+    <!-- Header -->
+    <header class="header">
+        <button class="menu-toggle" id="menuToggle">☰</button> 
+        <div class="container mx-auto px-4 flex justify-between items-center py-3">
+            <!-- Right Side - Logo and Menu Toggle -->
+            <div class="flex items-center space-x-4 space-x-reverse">
+                <a href="index.html" class="flex items-center">
+                    <img src="assets/svg/logo1.PNG" alt="کلاسیکال موزیک" class="h-10 w-10 ml-3">
+                    <h1 class="text-xl md:text-2xl font-bold">کلاسیکال موزیک</h1>
+                </a>
+            </div>
+
+            <!-- Center - Search Bar (Desktop) -->
+            <div class="hidden md:flex flex-1 max-w-xl mx-6">
+                <div class="relative w-full">
+                    <input type="text" placeholder="جستجو کنید..." 
+                        class="w-full py-2 px-4 pr-10 rounded-full border focus:outline-none focus:ring-2 bg-opacity-50"
+                        style="background-color: inherit; border-color: currentColor;">
+                    <button class="absolute left-3 top-1/2 transform -translate-y-1/2">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Left Side - Theme and Auth -->
+            <div class="flex items-center space-x-4 space-x-reverse">
+                <!-- Theme Switcher -->
+                <div class="theme-switcher flex items-center space-x-2 space-x-reverse">
+                    <button onclick="setTheme('light')" class="theme-btn theme-light w-6 h-6 rounded-full border-2" title="حالت روشن"></button>
+                    <button onclick="setTheme('dark')" class="theme-btn theme-dark w-6 h-6 rounded-full border-2" title="حالت تیره"></button>
+                    <button onclick="setTheme('orange')" class="theme-btn theme-orange w-6 h-6 rounded-full border-2" title="حالت نارنجی"></button>
+                </div>
+
+                <!-- Auth Button -->
+                <div class="auth2-buttons hidden md:block">
+                    <a href="login-register.html" class="btn sign-in-btn px-4 py-1 rounded-full border hover:bg-opacity-20 transition"
+                    style="border-color: currentColor;">
+                        ورود | ثبت نام
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Bar - Mobile -->
+        <div class="md:hidden px-4 py-2">
+            <div class="relative">
+                <input type="text" placeholder="جستجو کنید..." 
+                    class="w-full py-2 px-4 pr-10 rounded-full border focus:outline-none bg-opacity-50"
+                    style="background-color: inherit; border-color: currentColor;">
+                <button class="absolute left-3 top-1/2 transform -translate-y-1/2">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Side Menu -->
+    <div class="side-menu" id="sideMenu">
+        <div class="menu-categories">
+            <div class="auth-buttons flex flex-col items-start mt-4">
+                <a href="login-register.html" class="btn sign-in-btn w-full mb-2 text-center">ورود | ثبت نام</a>
+            </div>
+            <div class="menu-category">
+                <h3>دوره‌های موسیقی</h3>
+                <ul>
+                    <li><a href="#">باروک (1600-1750)</a></li>
+                    <li><a href="#">کلاسیک (1750-1820)</a></li>
+                    <li><a href="#">رمانتیک (1820-1900)</a></li>
+                    <li><a href="#">مدرن (1900-اکنون)</a></li>
+                </ul>
+            </div>
+            
+            <div class="menu-category">
+                <h3>دسته بندی های ویژه</h3>
+                <ul>
+                    <li><a href="#">آهنگسازان</a></li>
+                    <li><a href="#">آهنگسازان دوره ی جدید</a></li>
+                    <li><a href="#">آثار منتخب</a></li>
+                    <li><a href="#">مستند ها</a></li>
+                    <li><a href="#">اجرای زنده(ویدیو)</a></li>
+                    <li><a href="#">مقالات</a></li>
+                </ul>
+            </div>
+            
+            <div class="menu-category">
+                <h3>فروشگاه</h3>
+                <ul>
+                    <li><a href="subscribe.html">اشتراک ویژه</a></li>
+                    <li><a href="#">کتاب</a></li>
+                    <li><a href="#">آلبوم فیزیکی</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Overlay when menu is open -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- home page btn-->
+    <a href="index.html" class="btn btn-primary go-home-btn">رفتن به صفحه اصلی</a>
+
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 md:py-12">
+        <div class="text-center mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">اشتراک ویژه کلاسیکال موزیک</h1>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto">
+                رسانه طرفداران موسیقی کلاسیک اولین رسانه ای است که به صورت کاملاََ تخصصی در زمینه آثار موسیقی کلاسیک فعالیت می کند، تنها هدف این رسانه ارتقا گوش شنیداری شما عزیزان می باشد برای همین امر قبل از اینکه آثار در وب سایت آپلود بشه چندین اجرای مختلف شنیده میشه، سپس در وب سایت آپلود میشه تا شما عزیزان به بهترین آثار موسیقی کلاسیک دسترسی داشته باشید
+            </p>
+        </div>
+        
+        <!-- Pricing Toggle -->
+        <div class="flex justify-center mb-8">
+            <div class="bg-opacity-20 rounded-full p-1 flex" style="background-color: var(--secondary-light);">
+                <button id="monthlyToggle" class="px-4 py-2 rounded-full font-medium">پرداخت ماهانه</button>
+                <button id="annualToggle" class="px-4 py-2 rounded-full bg-primary-orange text-white font-medium">پرداخت سالانه (20% تخفیف)</button>
+            </div>
+        </div>
+        
+        <!-- Pricing Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <!-- Basic Plan -->
+            <div class="pricing-card bg-white rounded-lg p-6 border border-gray-200">
+                <h2 class="text-xl font-bold mb-2">پایه</h2>
+                <p class="text-gray-500 line-through mb-1 monthly-price">ماهانه 49,000 تومان</p>
+                <p class="text-gray-500 line-through mb-1 annual-price hidden">سالانه 588,000 تومان</p>
+                <p class="price-annual hidden text-3xl font-bold text-teal-500 mb-1"><span>470,000</span> <span class="text-lg">تومان</span></p>
+                <p class="price-monthly text-3xl font-bold text-teal-500 mb-1"><span>49,000</span> <span class="text-lg">تومان</span></p>
+                <p class="text-gray-500 mb-6 annual-save hidden">صرفه‌جویی 118,000 تومان</p>
+                
+                <div class="divider"></div>
+                
+                <ul class="feature-list">
+                    <li>دسترسی به 1000+ اثر موسیقی کلاسیک</li>
+                    <li>50 درس آموزشی ماهانه</li>
+                    <li>10 تحلیل تخصصی ماهانه</li>
+                    <li>پخش آفلاین محدود</li>
+                    <li>کیفیت صدا تا 320kbps</li>
+                </ul>
+                
+                <button class="mt-6 w-full py-3 rounded-lg border border-primary-orange text-primary-orange font-semibold hover:bg-primary-orange hover:text-white transition">
+                    انتخاب طرح
+                </button>
+            </div>
+            
+            <!-- Standard Plan -->
+            <div class="pricing-card bg-white rounded-lg p-6 border border-gray-200">
+                <h2 class="text-xl font-bold mb-2">استاندارد</h2>
+                <p class="text-gray-500 line-through mb-1 monthly-price">ماهانه 89,000 تومان</p>
+                <p class="text-gray-500 line-through mb-1 annual-price hidden">سالانه 1,068,000 تومان</p>
+                <p class="price-annual hidden text-3xl font-bold text-teal-500 mb-1"><span>854,000</span> <span class="text-lg">تومان</span></p>
+                <p class="price-monthly text-3xl font-bold text-teal-500 mb-1"><span>89,000</span> <span class="text-lg">تومان</span></p>
+                <p class="text-gray-500 mb-6 annual-save hidden">صرفه‌جویی 214,000 تومان</p>
+                
+                <div class="divider"></div>
+                
+                <ul class="feature-list">
+                    <li>تمام امکانات طرح پایه</li>
+                    <li>دسترسی به 3000+ اثر موسیقی کلاسیک</li>
+                    <li>100 درس آموزشی ماهانه</li>
+                    <li>25 تحلیل تخصصی ماهانه</li>
+                    <li>پخش آفلاین نامحدود</li>
+                    <li>کیفیت صدا تا FLAC</li>
+                    <li>دسترسی به مستندهای اختصاصی</li>
+                </ul>
+                
+                <button class="mt-6 w-full py-3 rounded-lg border border-primary-orange text-primary-orange font-semibold hover:bg-primary-orange hover:text-white transition">
+                    انتخاب طرح
+                </button>
+            </div>
+            
+            <!-- Premium Plan (Popular) -->
+            <div class="pricing-card popular bg-white rounded-lg p-6 border-2">
+                <div class="popular-badge">پرفروش</div>
+                <h2 class="text-xl font-bold mb-2">ویژه</h2>
+                <p class="text-gray-500 line-through mb-1 monthly-price">ماهانه 129,000 تومان</p>
+                <p class="text-gray-500 line-through mb-1 annual-price hidden">سالانه 1,548,000 تومان</p>
+                <p class="price-annual hidden text-3xl font-bold text-teal-500 mb-1"><span>1,238,000</span> <span class="text-lg">تومان</span></p>
+                <p class="price-monthly text-3xl font-bold text-teal-500 mb-1"><span>129,000</span> <span class="text-lg">تومان</span></p>
+                <p class="text-gray-500 mb-6 annual-save hidden">صرفه‌جویی 310,000 تومان</p>
+                
+                <div class="divider"></div>
+                
+                <ul class="feature-list">
+                    <li>تمام امکانات طرح استاندارد</li>
+                    <li>دسترسی به تمام آثار موسیقی کلاسیک</li>
+                    <li>درس‌های آموزشی نامحدود</li>
+                    <li>تحلیل‌های تخصصی نامحدود</li>
+                    <li>مستندهای اختصاصی و نادر</li>
+                    <li>اجراهای زنده اختصاصی</li>
+                    <li>مشاوره تخصصی ماهانه</li>
+                    <li>هدیه ماهانه (کتاب/آلبوم)</li>
+                </ul>
+                
+                <button class="mt-6 w-full py-3 rounded-lg bg-primary-orange text-white font-semibold hover:bg-secondary-orange transition">
+                    انتخاب طرح
+                </button>
+            </div>
+            
+            <!-- Family Plan -->
+            <div class="pricing-card bg-white rounded-lg p-6 border border-gray-200">
+                <h2 class="text-xl font-bold mb-2">خانواده</h2>
+                <p class="text-gray-500 line-through mb-1 monthly-price">ماهانه 199,000 تومان</p>
+                <p class="text-gray-500 line-through mb-1 annual-price hidden">سالانه 2,388,000 تومان</p>
+                <p class="price-annual hidden text-3xl font-bold text-teal-500 mb-1"><span>1,910,000</span> <span class="text-lg">تومان</span></p>
+                <p class="price-monthly text-3xl font-bold text-teal-500 mb-1"><span>199,000</span> <span class="text-lg">تومان</span></p>
+                <p class="text-gray-500 mb-6 annual-save hidden">صرفه‌جویی 478,000 تومان</p>
+                
+                <div class="divider"></div>
+                
+                <ul class="feature-list">
+                    <li>تمام امکانات طرح ویژه</li>
+                    <li>5 حساب کاربری همزمان</li>
+                    <li>پروفایل‌های شخصی سازی شده</li>
+                    <li>تاریخچه پخش جداگانه</li>
+                    <li>پیشنهادات شخصی سازی شده</li>
+                    <li>2 مشاوره تخصصی ماهانه</li>
+                    <li>2 هدیه ماهانه (کتاب/آلبوم)</li>
+                </ul>
+                
+                <button class="mt-6 w-full py-3 rounded-lg border border-primary-orange text-primary-orange font-semibold hover:bg-primary-orange hover:text-white transition">
+                    انتخاب طرح
+                </button>
+            </div>
+        </div>
+        
+        <!-- FAQ Section -->
+        <div class="max-w-4xl mx-auto mt-16">
+            <h2 class="text-2xl font-bold mb-6 text-center">سوالات متداول</h2>
+            
+            <div class="space-y-4">
+                <div class="border-b pb-4">
+                    <button class="faq-toggle w-full flex justify-between items-center text-right">
+                        <span class="text-lg font-medium">آیا می‌توانم طرح اشتراک را تغییر دهم؟</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="faq-content mt-2 hidden">
+                        <p class="text-gray-600">بله، شما می‌توانید در هر زمان طرح اشتراک خود را ارتقا دهید. در صورت ارتقا، مابه‌التفاوت دوره باقی‌مانده از اشتراک شما محاسبه و به حساب شما اعمال می‌شود.</p>
+                    </div>
+                </div>
+                
+                <div class="border-b pb-4">
+                    <button class="faq-toggle w-full flex justify-between items-center text-right">
+                        <span class="text-lg font-medium">آیا امکان بازگشت وجه وجود دارد؟</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="faq-content mt-2 hidden">
+                        <p class="text-gray-600">در صورت عدم رضایت از خدمات در 7 روز اول اشتراک، می‌توانید درخواست بازگشت وجه دهید. پس از این مدت، امکان بازگشت وجه وجود ندارد.</p>
+                    </div>
+                </div>
+                
+                <div class="border-b pb-4">
+                    <button class="faq-toggle w-full flex justify-between items-center text-right">
+                        <span class="text-lg font-medium">چگونه می‌توانم اشتراک خود را لغو کنم؟</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="faq-content mt-2 hidden">
+                        <p class="text-gray-600">می‌توانید از بخش تنظیمات حساب کاربری خود، تمدید خودکار اشتراک را غیرفعال کنید. در این صورت پس از پایان دوره، اشتراک شما تمدید نخواهد شد.</p>
+                    </div>
+                </div>
+                
+                <div class="border-b pb-4">
+                    <button class="faq-toggle w-full flex justify-between items-center text-right">
+                        <span class="text-lg font-medium">آیا محتواها به روز می‌شوند؟</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="faq-content mt-2 hidden">
+                        <p class="text-gray-600">بله، ما هر هفته محتوای جدید شامل آثار موسیقی، درس‌های آموزشی و تحلیل‌های تخصصی به مجموعه اضافه می‌کنیم.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-16">
+        <div class="container mx-auto px-4">
+            <div class="social-links">
+                <a href="#" aria-label="اینستاگرام"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="تلگرام"><i class="fab fa-telegram"></i></a>
+                <a href="#" aria-label="یوتیوب"><i class="fab fa-youtube"></i></a>
+                <a href="mailto:info@classicalmusic.com" aria-label="ایمیل"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="footer-info text-center mt-4">
+                <p>© ۱۴۰۳ کلاسیکال موزیک - تمامی حقوق محفوظ است.</p>
+                <p class="mt-2">تمامی محتوای این سایت مربوط به موسیقی کلاسیک می‌باشد.</p>
+            </div>
+            
+            <hr class="my-6 opacity-20">
+            
+            <div class="developer-info text-center">
+                <p>طراحی و توسعه: <span class="font-medium">سامان قاسمی</span></p>
+                <p class="mt-1">تماس: <a href="mailto:samanghasemiwork@gmail.com" class="hover:underline">samanghasemiwork@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script-subscribe.js"></script>
+</body>
+</html>

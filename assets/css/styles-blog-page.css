@@ -1,0 +1,648 @@
+:root {
+    --primary-light: #f8f1e5;
+    --secondary-light: #e8d8b5;
+    --text-light: #333333;
+    --primary-dark: #1a1a1a;
+    --secondary-dark: #2a2a2a;
+    --text-dark: #f0f0f0;
+    --primary-orange: #332010;
+    --secondary-orange: #663300;
+    --text-orange: #ffd9b3;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Light Theme (Default) */
+body.light {
+    background-color: var(--primary-light);
+    color: var(--text-light);
+}
+
+.light .header,
+.light .footer {
+    background-color: var(--secondary-light);
+}
+
+/* Dark Theme */
+body.dark {
+    background-color: var(--primary-dark);
+    color: var(--text-dark);
+}
+
+.dark .header,
+.dark .footer {
+    background-color: var(--secondary-dark);
+}
+
+/* Orange Theme */
+body.orange {
+    background-color: var(--primary-orange);
+    color: var(--text-orange);
+}
+
+.orange .header,
+.orange .footer {
+    background-color: var(--secondary-orange);
+}
+
+/* Header Styles */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header img {
+    margin-inline-start: 30px;
+}
+
+/* Theme-specific header styles */
+.light .header {
+    background-color: var(--secondary-light);
+    color: var(--text-light);
+}
+
+.dark .header {
+    background-color: var(--secondary-dark);
+    color: var(--text-dark);
+}
+
+.orange .header {
+    background-color: var(--secondary-orange);
+    color: var(--text-orange);
+}
+
+/* Theme buttons */
+.theme-btn {
+    cursor: pointer;
+    transition: transform 0.2s;
+    border-color: currentColor !important;
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+}
+
+.theme-light {
+    background-color: var(--primary-light);
+}
+
+.theme-dark {
+    background-color: var(--primary-dark);
+}
+
+.theme-orange {
+    background-color: var(--secondary-orange);
+}
+
+/* Auth button */
+.sign-in-btn {
+    transition: all 0.3s ease;
+}
+
+/* Side Menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 280px;
+    height: 100vh;
+    background-color: inherit;
+    border-left: 1px solid currentColor;
+    z-index: 1000;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    border-radius: 8px;
+    padding: 1rem;
+    scrollbar-width: none;
+}
+
+.side-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.side-menu.active {
+    right: 0;
+}
+
+.menu-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1001;
+    cursor: pointer;
+    font-size: 1.5rem;
+    background: inherit;
+    border: none;
+    color: inherit;
+    padding: 0.5rem;
+}
+
+.menu-categories {
+    margin-top: 3rem;
+}
+
+.menu-category {
+    margin-bottom: 1.2rem;
+}
+
+.menu-category h3 {
+    font-size: 1.1rem;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.4rem;
+}
+
+.menu-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-category li {
+    margin-bottom: 0.4rem;
+}
+
+.menu-category a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 0.9rem;
+    display: block;
+    padding: 0.3rem 0;
+}
+
+.menu-category a:hover {
+    opacity: 0.8;
+}
+
+.auth-buttons a {
+    width: 100%;
+    /* Ensure it takes full width */
+    padding: 0.5rem;
+    /* Increase padding */
+    text-align: center;
+    /* Center text */
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .auth-buttons a {
+        display: block;
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+
+
+/* home page btn */
+.go-home-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-dark);
+    /* رنگ پس‌زمینه */
+    color: #fff;
+    /* رنگ متن */
+    border: none;
+    /* حذف حاشیه */
+    border-radius: 5px;
+    /* گوشه‌های گرد */
+    text-align: center;
+    /* مرکز متن */
+    text-decoration: none;
+    /* حذف زیرخط */
+    font-size: 1rem;
+    /* اندازه فونت */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* انیمیشن */
+    margin: 20px 0;
+    /* فاصله از بالا و پایین */
+}
+
+.go-home-btn:hover {
+    background-color: var(--secondary-dark);
+    /* رنگ پس‌زمینه در حالت هاور */
+    transform: scale(1.05);
+    /* بزرگ شدن دکمه در حالت هاور */
+}
+
+.go-home-btn:active {
+    transform: scale(0.95);
+    /* کوچک شدن دکمه در حالت کلیک */
+}
+
+
+/* main */
+/* استایل‌های جدید برای صفحه وبلاگ */
+
+
+
+/* بخش مستند ویژه */
+.featured-documentary {
+    background-color: inherit;
+}
+
+.featured-documentary img {
+    transition: transform 0.3s ease;
+}
+
+.featured-documentary img:hover {
+    transform: scale(1.02);
+}
+
+.watch-btn {
+    transition: all 0.3s ease;
+}
+
+/* باکس محتوای متنی */
+.content-box {
+    background-color: inherit;
+    max-height: 600px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.content-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.content-box::-webkit-scrollbar-thumb {
+    background-color: currentColor;
+    border-radius: 3px;
+}
+
+.article-content {
+    line-height: 1.8;
+}
+
+.article-content h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.article-content ul,
+.article-content ol {
+    margin-right: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* بخش نظرات */
+.comment-form label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.comment-form input,
+.comment-form textarea {
+    transition: all 0.3s ease;
+    background-color: inherit;
+}
+
+.comment-form input:focus,
+.comment-form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px currentColor;
+}
+
+.submit-comment {
+    transition: all 0.3s ease;
+}
+
+.comment {
+    transition: all 0.3s ease;
+}
+
+.comment:hover {
+    transform: translateX(-5px);
+}
+
+.reply-btn {
+    color: inherit;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.reply-btn:hover {
+    opacity: 1;
+}
+
+/* استایل‌های بخش نظرات با عکس کاربر */
+.comments-list .comment {
+    transition: all 0.3s ease;
+}
+
+.comments-list .comment:hover {
+    transform: translateX(-5px);
+}
+
+.comment-user-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid;
+    border-color: currentColor;
+    margin-left: 1rem;
+}
+
+.comment-content {
+    flex: 1;
+}
+
+/* برای کاربران بدون عکس */
+.comment-default-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    border: 2px solid;
+    border-color: currentColor;
+}
+
+.comment-default-avatar i {
+    font-size: 1.2rem;
+    color: currentColor;
+    opacity: 0.7;
+}
+
+@media (max-width: 640px) {
+    .comments-list .comment {
+        flex-direction: column;
+    }
+
+    .comment-user-avatar,
+    .comment-default-avatar {
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+/* واکنش‌گرایی */
+@media (max-width: 768px) {
+    .featured-documentary {
+        flex-direction: column;
+    }
+
+    .featured-documentary>div {
+        width: 100% !important;
+    }
+
+    .content-box {
+        padding: 1rem;
+    }
+
+    .comment-form .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .content-box {
+        padding: 2rem;
+    }
+}
+
+
+
+/* Footer */
+.footer {
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    color: inherit;
+    font-size: 1.2rem;
+}
+
+/* Shape Divider */
+.custom-shape-divider-top-1744302011 {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1744302011 svg {
+    position: relative;
+    display: block;
+    width: calc(134% + 1.3px);
+    height: 120px;
+}
+
+.custom-shape-divider-top-1744302011 .shape-fill {
+    fill: #d6d2cc;
+}
+
+/* Slider Navigation */
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.slider-nav button {
+    pointer-events: all;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    margin: 0 0.5rem;
+}
+
+/* درباره ما - واکنش‌گرا */
+@media (max-width: 767px) {
+    .composer-grid-container.flex {
+        flex-direction: column;
+    }
+
+    .logo-about {
+        width: 200px !important;
+        height: 200px !important;
+        margin-bottom: 1.5rem;
+    }
+
+    .composer-grid-container .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .composer-grid-container.flex {
+        flex-direction: row;
+    }
+
+    .logo-about {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .header {
+        padding: 1rem 2rem;
+    }
+
+    .logo-about {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+        padding-right: 70px;
+    }
+
+    .nav {
+        gap: 1.5rem;
+    }
+
+    .nav a {
+        font-size: 1.1rem;
+    }
+
+    .theme-btn {
+        width: 25px;
+        height: 25px;
+    }
+
+    .hero {
+        padding: 3rem 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+    }
+
+    .composers {
+        padding: 0 2rem 2rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .composer-img {
+        height: 200px;
+    }
+
+    .composer-name {
+        font-size: 1.3rem;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    .custom-shape-divider-top-1744302011 svg {
+        height: 177px;
+    }
+
+    .side-menu {
+        width: 300px;
+    }
+
+    .slider-nav button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.3rem;
+        padding-right: 40px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+
+    }
+
+    .composer-card {
+        flex: 0 0 200px;
+    }
+
+    .composer-img {
+        height: 150px;
+    }
+
+    .menu-toggle {
+        top: 12px;
+        right: 12px;
+        font-size: 1.3rem;
+    }
+
+    .side-menu {
+        width: 260px;
+    }
+}
